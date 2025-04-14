@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automation Excellence</title>
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -66,13 +68,13 @@
             padding-bottom: 60px;
         }
         
-        .hero h1 {
+        /* Animation Text Styling */
+        #app {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 56px;
-            font-weight: 600;
+            color: #135EDE;
             margin-bottom: 10px;
-            background: linear-gradient(90deg, #0066cc, #5ac8fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         
         .hero p {
@@ -414,7 +416,7 @@
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
+            #app {
                 font-size: 40px;
             }
             
@@ -448,7 +450,9 @@
     </header>
     
     <section class="hero">
-        <h1>Automation neu gedacht</h1>
+        <div class="cd-intro">
+            <div id="app"></div>
+        </div>
         <p>Mit unseren RPA-Lösungen optimieren wir Ihre Geschäftsprozesse und schaffen Zeit für Innovation.</p>
         <button class="cta-button">Beratung vereinbaren</button>
     </section>
@@ -589,5 +593,24 @@
         </div>
         <p class="copyright">Copyright © 2025 Automation Excellence GmbH. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <!-- Typewriter JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.js"></script>
+    <script>
+        var app = document.getElementById("app");
+        var typewriter = new Typewriter(app, {
+            loop: true,
+        });
+        typewriter
+            .typeString("Work smart.")
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString("Think ahead.")
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString("Simplify workflows.")
+            .pauseFor(2500)
+            .start();
+    </script>
 </body>
 </html>
