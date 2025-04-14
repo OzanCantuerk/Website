@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automation Excellence</title>
-    <!-- Google Fonts: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,13 +11,13 @@
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        
+
         body {
             background-color: #f5f5f7;
             color: #1d1d1f;
             line-height: 1.5;
         }
-        
+
         header {
             background-color: rgba(245, 245, 247, 0.8);
             backdrop-filter: blur(20px);
@@ -28,7 +26,7 @@
             z-index: 100;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -37,19 +35,19 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 600;
             color: #1d1d1f;
             text-decoration: none;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 30px;
         }
-        
+
         .nav-links a {
             color: #1d1d1f;
             text-decoration: none;
@@ -57,34 +55,33 @@
             font-weight: 400;
             transition: color 0.2s;
         }
-        
+
         .nav-links a:hover {
             color: #0066cc;
         }
-        
+
         .hero {
             padding-top: 120px;
             text-align: center;
             padding-bottom: 60px;
         }
-        
-        /* Animation Text Styling */
-        #app {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+
+        .hero h1 {
             font-size: 56px;
-            color: #135EDE;
-            margin-bottom: 25px;
-            height: 70px; /* Feste Höhe für die Animation */
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #0066cc, #5ac8fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
+
         .hero p {
             font-size: 24px;
             color: #86868b;
             max-width: 600px;
             margin: 0 auto 30px;
         }
-        
+
         .cta-button {
             background-color: #0066cc;
             color: white;
@@ -95,32 +92,33 @@
             font-weight: 500;
             cursor: pointer;
             transition: background-color 0.2s;
+            margin-top: 20px; /* Fügt etwas Abstand nach dem Text hinzu */
         }
-        
+
         .cta-button:hover {
             background-color: #004499;
         }
-        
+
         .services-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 20px;
             text-align: center;
         }
-        
+
         .services-section h2 {
             font-size: 40px;
             margin-bottom: 20px;
             color: #1d1d1f;
         }
-        
+
         .services-section > p {
             color: #86868b;
             max-width: 700px;
             margin: 0 auto 50px;
             font-size: 18px;
         }
-        
+
         .service-card {
             background-color: white;
             border-radius: 18px;
@@ -133,11 +131,11 @@
             align-items: center;
             gap: 30px;
         }
-        
+
         .service-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .service-icon {
             flex-shrink: 0;
             width: 80px;
@@ -150,23 +148,23 @@
             color: white;
             font-size: 30px;
         }
-        
+
         .service-content {
             flex-grow: 1;
         }
-        
+
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 10px;
             color: #1d1d1f;
         }
-        
+
         .service-card p {
             color: #86868b;
             margin-bottom: 20px;
             font-size: 16px;
         }
-        
+
         .learn-more {
             color: #0066cc;
             text-decoration: none;
@@ -174,57 +172,58 @@
             display: inline-flex;
             align-items: center;
         }
-        
+
         .learn-more:after {
             content: "→";
             margin-left: 5px;
             transition: margin-left 0.2s;
         }
-        
+
         .learn-more:hover:after {
             margin-left: 10px;
         }
-        
+
         .process-section {
             background-color: white;
             padding: 80px 20px;
         }
-        
+
         .process-container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .process-header {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .process-header h2 {
             font-size: 40px;
             margin-bottom: 20px;
             color: #1d1d1f;
         }
-        
+
         .process-header p {
             color: #86868b;
             max-width: 700px;
             margin: 0 auto;
             font-size: 18px;
         }
-        
+
         .process-steps {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        
+
         .step {
             flex-basis: calc(25% - 20px);
             text-align: center;
             position: relative;
+            margin-bottom: 40px; /* Fügt Abstand zwischen den Schritten hinzu */
         }
-        
+
         .step:not(:last-child):after {
             content: "";
             position: absolute;
@@ -234,7 +233,7 @@
             height: 2px;
             background-color: #d2d2d7;
         }
-        
+
         .step-number {
             width: 80px;
             height: 80px;
@@ -248,47 +247,47 @@
             font-weight: 600;
             color: #0066cc;
         }
-        
+
         .step h3 {
             font-size: 18px;
             margin-bottom: 10px;
             color: #1d1d1f;
         }
-        
+
         .step p {
             color: #86868b;
             font-size: 14px;
         }
-        
+
         .cases-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 20px;
         }
-        
+
         .cases-header {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .cases-header h2 {
             font-size: 40px;
             margin-bottom: 20px;
             color: #1d1d1f;
         }
-        
+
         .cases-header p {
             color: #86868b;
             max-width: 700px;
             margin: 0 auto;
             font-size: 18px;
         }
-        
+
         .case-studies {
             display: flex;
             gap: 30px;
         }
-        
+
         .case-study {
             flex: 1;
             background-color: white;
@@ -297,11 +296,11 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
         }
-        
+
         .case-study:hover {
             transform: translateY(-5px);
         }
-        
+
         .case-image {
             height: 200px;
             background-color: #f2f2f2;
@@ -309,46 +308,46 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .case-content {
             padding: 25px;
         }
-        
+
         .case-study h3 {
             font-size: 20px;
             margin-bottom: 10px;
             color: #1d1d1f;
         }
-        
+
         .case-study p {
             color: #86868b;
             margin-bottom: 20px;
             font-size: 14px;
         }
-        
+
         .cta-section {
             background: linear-gradient(135deg, #0066cc, #5ac8fa);
             padding: 80px 20px;
             text-align: center;
             color: white;
         }
-        
+
         .cta-container {
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .cta-section h2 {
             font-size: 40px;
             margin-bottom: 20px;
         }
-        
+
         .cta-section p {
             margin-bottom: 30px;
             font-size: 18px;
             opacity: 0.9;
         }
-        
+
         .cta-button-white {
             background-color: white;
             color: #0066cc;
@@ -360,18 +359,18 @@
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        
+
         .cta-button-white:hover {
             background-color: rgba(255, 255, 255, 0.9);
         }
-        
+
         footer {
             background-color: #f5f5f7;
             padding: 40px 20px;
             text-align: center;
             border-top: 1px solid #d2d2d7;
         }
-        
+
         .footer-links {
             max-width: 600px;
             margin: 0 auto 20px;
@@ -380,65 +379,59 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-        
+
         .footer-links a {
             color: #515154;
             text-decoration: none;
             font-size: 12px;
         }
-        
+
         .footer-links a:hover {
             text-decoration: underline;
         }
-        
+
         .copyright {
             color: #86868b;
             font-size: 12px;
         }
-        
+
         @media (max-width: 900px) {
             .service-card {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .step {
                 flex-basis: calc(50% - 15px);
                 margin-bottom: 40px;
             }
-            
+
             .step:not(:last-child):after {
                 display: none;
             }
-            
+
             .case-studies {
                 flex-direction: column;
             }
         }
-        
+
         @media (max-width: 768px) {
-            #app {
+            .hero h1 {
                 font-size: 40px;
-                height: 60px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .nav-links {
                 gap: 15px;
             }
-            
+
             .step {
                 flex-basis: 100%;
-            }
-            
-            #app {
-                font-size: 32px;
-                height: 50px;
             }
         }
     </style>
@@ -455,19 +448,18 @@
             </div>
         </nav>
     </header>
-    
+
     <section class="hero">
-        <div class="cd-intro">
-            <div id="app"></div>
-        </div>
-        <p>Automate!</p>
+        <h1>Automation neu gedacht</h1>
+        <p>Mit unseren RPA-Lösungen optimieren wir Ihre Geschäftsprozesse und schaffen Zeit für Innovation.</p>
+        <p style="white-space: pre-wrap; margin-bottom: 10px;">                    ROBOWAVE digitalisiert und automatisiert Ihre Prozesse. So haben Sie mehr Zeit für die wichtigen Aufgaben im Unternehmen.</p>
         <button class="cta-button">Beratung vereinbaren</button>
     </section>
-    
+
     <section class="services-section">
         <h2>Unsere Leistungen</h2>
         <p>Wir bieten maßgeschneiderte RPA-Lösungen, die Ihre Mitarbeiter von repetitiven Aufgaben befreien und Ihre betriebliche Effizienz steigern.</p>
-        
+
         <div class="service-card">
             <div class="service-icon">🤖</div>
             <div class="service-content">
@@ -476,7 +468,7 @@
                 <a href="#" class="learn-more">Mehr erfahren</a>
             </div>
         </div>
-        
+
         <div class="service-card">
             <div class="service-icon">📊</div>
             <div class="service-content">
@@ -485,7 +477,7 @@
                 <a href="#" class="learn-more">Mehr erfahren</a>
             </div>
         </div>
-        
+
         <div class="service-card">
             <div class="service-icon">🔄</div>
             <div class="service-content">
@@ -494,7 +486,7 @@
                 <a href="#" class="learn-more">Mehr erfahren</a>
             </div>
         </div>
-        
+
         <div class="service-card">
             <div class="service-icon">🧠</div>
             <div class="service-content">
@@ -504,120 +496,20 @@
             </div>
         </div>
     </section>
-    
+
     <section class="process-section">
         <div class="process-container">
             <div class="process-header">
                 <h2>Unser Prozess</h2>
                 <p>Vom ersten Gespräch bis zur erfolgreichen Implementierung – wir begleiten Sie Schritt für Schritt.</p>
             </div>
-            
+
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Analyse</h3>
                     <p>Wir analysieren Ihre bestehenden Prozesse und identifizieren Automatisierungspotenziale.</p>
                 </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Konzeption</h3>
-                    <p>Gemeinsam entwickeln wir eine maßgeschneiderte Automatisierungsstrategie.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Umsetzung</h3>
-                    <p>Wir implementieren die RPA-Lösung und integrieren sie nahtlos in Ihre bestehende IT-Infrastruktur.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Optimierung</h3>
-                    <p>Durch kontinuierliches Monitoring verbessern wir Ihre Automatisierungslösung stetig.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cases-section">
-        <div class="cases-header">
-            <h2>Erfolgsgeschichten</h2>
-            <p>Sehen Sie, wie wir anderen Unternehmen geholfen haben, ihre Prozesse zu revolutionieren.</p>
-        </div>
-        
-        <div class="case-studies">
-            <div class="case-study">
-                <div class="case-image">
-                    <img src="/api/placeholder/400/200" alt="Fallstudie Finanzwesen">
-                </div>
-                <div class="case-content">
-                    <h3>Automatisierte Rechnungsverarbeitung</h3>
-                    <p>50% Zeitersparnis bei der Rechnungsbearbeitung durch intelligente Dokumentenverarbeitung und automatisierte Workflows.</p>
-                    <a href="#" class="learn-more">Fallstudie lesen</a>
-                </div>
-            </div>
-            
-            <div class="case-study">
-                <div class="case-image">
-                    <img src="/api/placeholder/400/200" alt="Fallstudie Logistik">
-                </div>
-                <div class="case-content">
-                    <h3>Optimiertes Supply Chain Management</h3>
-                    <p>30% Reduktion von manuellen Eingaben und 15% weniger Fehler durch automatisierte Bestandsverwaltung.</p>
-                    <a href="#" class="learn-more">Fallstudie lesen</a>
-                </div>
-            </div>
-            
-            <div class="case-study">
-                <div class="case-image">
-                    <img src="/api/placeholder/400/200" alt="Fallstudie Kundenservice">
-                </div>
-                <div class="case-content">
-                    <h3>Effizienter Kundenservice</h3>
-                    <p>Reduzierung der Bearbeitungszeit für Kundenanfragen um 40% durch automatisierte Informationsbereitstellung.</p>
-                    <a href="#" class="learn-more">Fallstudie lesen</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta-section">
-        <div class="cta-container">
-            <h2>Bereit für mehr Effizienz?</h2>
-            <p>Lassen Sie uns gemeinsam die Potenziale in Ihrem Unternehmen entdecken und nutzen.</p>
-            <button class="cta-button-white">Kostenlose Erstberatung</button>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="footer-links">
-            <a href="#">Datenschutz</a>
-            <a href="#">Impressum</a>
-            <a href="#">AGB</a>
-            <a href="#">Karriere</a>
-            <a href="#">Blog</a>
-        </div>
-        <p class="copyright">Copyright © 2025 Automation Excellence GmbH. Alle Rechte vorbehalten.</p>
-    </footer>
 
-    <!-- Typewriter JS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.js"></script>
-    <script>
-        var app = document.getElementById("app");
-        var typewriter = new Typewriter(app, {
-            loop: true,
-        });
-        typewriter
-            .typeString("Work smart.")
-            .pauseFor(2500)
-            .deleteAll()
-            .typeString("Think ahead.")
-            .pauseFor(2500)
-            .deleteAll()
-            .typeString("Simplify workflows.")
-            .pauseFor(2500)
-            .start();
-    </script>
-</body>
-</html>
+                <div class="step">
+                    <div
